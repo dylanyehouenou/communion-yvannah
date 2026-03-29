@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte d'Invitation - Yvannah YEHOUENOU</title>
+    <!-- Google Fonts pour un rendu harmonieux avec le site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables basées sur le site web */
+        :root {
+            --primary-color: #D4AF37; /* Or */
+            --bg-color: #FAF9F6;      /* Ivoire */
+            --text-main: #333333;
+            --text-light: #666666;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lora', serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0; /* Fond gris pour l'aperçu à l'écran */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: var(--font-body);
+            color: var(--text-main);
+        }
+
+        /* Format de la carte A4 (210mm x 297mm) */
+        .invitation-card {
+            width: 210mm;
+            height: 297mm;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at center, #ffffff 0%, var(--bg-color) 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin: 20px;
+            box-sizing: border-box;
+            padding: 14mm 16mm;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: visible;
+        }
+
+        /* Liseré doré */
+        .card-border {
+            position: absolute;
+            top: 8mm;
+            bottom: 8mm;
+            left: 8mm;
+            right: 8mm;
+            border: 2px solid var(--primary-color);
+            pointer-events: none;
+        }
+
+        .header .subtitle {
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin: 0 0 4mm 0;
+        }
+
+        .header .title {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 26pt;
+            color: var(--primary-color);
+            margin: 0 0 3mm 0;
+        }
+
+        .header .name {
+            font-family: var(--font-heading);
+            font-size: 20pt;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .image-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .illustration {
+            max-height: 100mm;
+            max-width: 100%;
+            width: auto;
+            border-radius: 5px;
+            mix-blend-mode: multiply; /* Fusionne le fond blanc de l'image avec l'ivoire */
+        }
+
+        .event-details {
+            margin: 5mm 0;
+            font-size: 11pt;
+            line-height: 1.6;
+        }
+
+        .event-details strong {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Section RSVP et QR Code */
+        .rsvp-section {
+            border-top: 1px solid rgba(212, 175, 55, 0.4);
+            padding-top: 5mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .qr-code {
+            width: 30mm;
+            height: 30mm;
+            flex-shrink: 0;
+            border: 1px solid #ccc;
+            padding: 3px;
+            background: white;
+        }
+
+        .rsvp-text {
+            font-size: 9pt;
+            line-height: 1.4;
+            max-width: 100mm;
+        }
+
+        .site-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            display: block;
+            margin-top: 3px;
+            font-family: monospace;
+            font-size: 9pt;
+        }
+
+        /* Notice carte d'invitation */
+        .invitation-notice-card {
+            border-top: 1px solid rgba(212, 175, 55, 0.4);
+            padding-top: 5mm;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: var(--text-main);
+            text-align: center;
+        }
+
+        .invitation-notice-card strong {
+            color: var(--primary-color);
+        }
+
+        /* Styles d'impression */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+            .invitation-card {
+                margin: 0;
+                box-shadow: none;
+                /* Optionnel : imprimez avec des traits de coupe en ajustant la taille du body */
+            }
+            @page {
+                size: A4;
+                margin: 0; /* Pas de marge pour que le fond prenne toute la carte */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <div class="card-border"></div>
+        
+        <div class="header">
+            <p class="subtitle">Nous avons la joie de vous convier à la</p>
+            <h1 class="title">Première Communion</h1>
+            <h2 class="name">de notre fille Yvannah YEHOUENOU</h2>
+        </div>
+
+        <div class="image-container">
+            <img src="assets/yvannah_communion_drawing.png" alt="Illustration" class="illustration">
+        </div>
+
+        <div class="event-details">
+            <p><strong>Cérémonie religieuse :</strong> Dimanche 10 mai 2026 à 10h30<br>
+            Église Sainte-Thérèse, 25 Rue du 4 Août 1789, 69100 Villeurbanne<br>
+            <strong>Réception – Restaurant Panasia :</strong> À partir de 13h00<br>
+            Centre Commercial La Part-Dieu – Les Tables, 3ème étage<br>
+            132 Rue Servient, 69003 Lyon &nbsp;•&nbsp; 04 78 79 18 15</p>
+        </div>
+
+        <div class="rsvp-section">
+            <!-- Remplacer 'votresite.com' par le vrai lien une fois le site publié en ligne -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=D4AF37&data=https://votresite.com" alt="QR Code" class="qr-code">
+            <div class="rsvp-text">
+                Confirmez votre présence et choisissez votre menu via ce QR code ou sur :
+                <span class="site-link">votresite.com</span>
+            </div>
+        </div>
+
+        <div class="invitation-notice-card">
+            🎟️ <strong>Cette carte est individuelle et unique.</strong><br>
+            Présentez-la imprimée ou sur votre téléphone le jour J.
+        </div>
+
+    </div>
+
+    <!-- Script pour indiquer à l'utilisateur comment imprimer -->
+    <script>
+        console.log("Pour imprimer: Faites Ctrl+P ou Cmd+P. Dans les paramètres d'impression, choisissez 'Taille de papier: A4' et cochez 'Imprimer les couleurs ou images d'arrière-plan'.");
+    </script>
+</body>
+</html>
